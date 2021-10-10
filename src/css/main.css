@@ -1,0 +1,235 @@
+/*############################################################
+                    -- MAIN STYLE -- 
+############################################################ */
+#main{
+    display: block;
+    background-color: var(--main-bg-m-grey);
+    padding: 4.6rem .8rem .8rem;
+}
+
+/*  #####################################################
+    #main 
+        .main-top
+            .main-header    -- 이벤트 이미지
+
+            .board
+                .data-list  -- 공지사항, 자유게시판
+
+    -- Style --
+    ##################################################### */
+
+ .main-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+ .main-top .main-header{
+    position: relative;
+    overflow: hidden;
+
+    min-height: 8rem;
+    height: 100%;
+
+    border-radius: 3px;
+    margin-bottom: .5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2.5rem;
+    background-color: aliceblue;
+}
+
+ .main-top .main-header img{
+    
+    display: block;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+    object-position: center;
+}
+
+.main-top .main-header h2{
+    color: var(--main-font-wh);
+    position: absolute;
+    z-index: 5;
+}
+
+/*####### data-list ######*/
+
+.data-list{
+    position: relative;
+    padding: 1rem;
+
+    background-color: #ffffff;
+    margin-bottom: .5rem;
+    border-radius: .3rem;
+}
+
+
+.data-list .list-title {
+    margin: 0 0 .8rem 0;
+    padding: 1rem 0 1rem;
+
+    display: grid;
+    grid-template-columns: minmax(100px, auto) 1.8rem ; 
+    border-bottom: 0.1rem solid var(--desc-line-color);
+}
+.data-list .list-title a {
+    font-size: 0;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.data-list .list-title a:after {
+    content : '';
+    display: block;
+    position: absolute;
+
+    width: 1.2rem;
+    height: 1.2rem;
+
+    background: url(../img/more.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    opacity: .5;
+}
+.data-list .list-body .list-item:hover{
+    background-color: var(--board-col-hover-color);
+}
+
+.data-list .list-body .list-item{
+    padding: .2rem 0 .2rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+.data-list .list-body .list-item a{
+    flex: auto;
+
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.data-list .list-body .list-item span:not(.noti){
+    flex: 0 0 25%;
+    text-align: right;
+}
+.data-list .list-body .list-item .noti{
+    flex: 0 0 auto;
+    margin-right: .4rem;
+}
+.data-list .list-body .list-item span:nth-child(1):not(.noti){
+    flex: 0 0 3.5rem;
+    margin-right: .4rem;
+    text-align: left;
+}
+.data-list .list-body .list-item .noti strong{
+
+    display: inline-block;
+    padding: 0 5px;
+    border-radius: 3px;
+    font-size: 15px;
+
+    background: var(--denger-color);
+    color: #fff;
+}
+
+/*  #####################################################
+    #main 
+        .gallery 
+            .data-list 
+                .list-body-grid 
+                    .list-item 
+                        .con
+    -- Gallery Board STYLE -- 
+    ##################################################### */
+.gallery .data-list .list-body-grid{
+    display: grid;
+    grid-gap: 1rem;
+    gap: 1rem;
+    align-items: start;
+    grid-template-columns: repeat(3, minmax(30%, 50%));
+}
+.gallery .data-list .list-body-grid .list-item{
+    position:relative;
+    width: 100%;
+
+    border-radius: 2px;
+    box-shadow: 0px 2px 6px 0px rgb(0 0 0 / 9%);
+}
+.gallery .data-list .list-body-grid .list-item:hover{
+    background-color: var(--board-col-hover-color);
+}
+
+.gallery .data-list .list-body-grid .list-item a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+.gallery .data-list .list-body-grid .list-item .con{
+    position: relative;        
+}
+
+.con .con-img{
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;      
+}
+.con .con-img img{
+    position: absolute;
+    width: 100%;
+    height: 100%;     
+    object-fit: cover;
+
+}
+.con .con-desc{
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+
+    padding: .8rem;
+}
+.con .con-desc .title{
+    margin-bottom: .5rem;
+}
+.con .con-desc .title span{
+    white-space: nowrap;
+    margin-right: .5rem;
+}
+.con .con-desc dt{
+    display: flex;
+}
+.con .con-desc dt.etc{
+    justify-content: space-between;   
+}
+
+/* 텍스트 말줄임(...) 적용 */
+.ellips { 
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.f09{
+    font-size: .9rem;
+}

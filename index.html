@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+    <link rel="stylesheet" type="text/css" href="src/css/common.css">
+    <link rel="stylesheet" type="text/css" href="src/css/header-footer.css">
+    <link rel="stylesheet" type="text/css" href="src/css/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+         
+        $(function(){
+
+            //메뉴오픈 이벤트
+            $('.menu_open').click(function(){
+                var href = $(this).attr('href');
+                layer_popup(href);
+            });
+
+            //레이어 팝업 오픈 이벤트
+            $('.popup_open').click(function(){
+                var href = $(this).attr('href');
+                layer_popup(href);
+            });
+            $('.popup_close').click(function(){
+                var href = $(this).attr('href');
+                layer_popup(href);
+            });
+        });
+
+        //메뉴 오픈 , 레이어팝업 이벤트 function
+        function layer_popup(el){
+            var $el = $(el);
+
+            switch (el) {
+                case '#popup_login': //로그인 팝업 창일때
+
+                    if($el.hasClass('is-open')) {
+                        $el.fadeOut("fast");
+                        $el.removeClass('is-open');
+                        break;
+                    }else{
+                        $el.fadeIn("fast");
+                        $el.addClass('is-open');
+                        break;
+                    }
+                case '#menu_list': //메뉴리스트 일때
+                    
+                    if($el.hasClass('is-open')){
+                        $el.slideUp();
+                        $el.removeClass('is-open');
+                        break;
+                    } else {
+                        $el.slideDown();
+                        $el.addClass('is-open');
+                        break;
+                    }       
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <header id="header">
+        <section class="top-area">
+            <div class="title-wrap">
+                <h1>Hello World</h1>
+                <button href="#menu_list" class="menu btn menu_open" >버튼</button>
+            </div>
+            <div class="link-wrap">
+                <div>
+                    <button href="#popup_login" class="popup_open">로그인</button>
+                    <button>회원가입</button>
+                </div>
+            </div>
+        </section>
+        <section id="menu_list" class="middle-area">
+            <nav class="nav">
+                <ul>
+                    <li>
+                        <a href="#;" title="공지사항 이동"></a>
+                        <span>공지사항</span>
+                    </li>
+                    <li>
+                        <a href="#;" title="자유게시판 이동"></a>
+                        <span>자유게시판</span>
+                    </li>
+                    <li>
+                        <a href="#;" title="갤러리 이동"></a>
+                        <span>갤러리</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <form id="searchFrm">
+                <div class="search">
+                    <div>
+                        <input type="search">
+                    </div>
+                    <button>검색</button>
+                </div>
+            </form>
+        </section>
+    </header>
+    <main id="main">
+        <section class="main-top">
+            <div class="main-header">
+                <img src="src/img/header_img.jpg">
+                <h2>Hello World</h2>
+            </div>
+            <div class="board">
+                <div class="data-list">
+                    <div class="list-title">
+                        <h3>공지사항</h3>
+                        <a href="#;" title="공지사항 더보기">더보기</a>
+                    </div>
+                    <div class="list-body">
+                        <dl>
+                            <dt class="list-item">
+                                <span class="noti"><strong>알림</strong></span>
+                                <a href="#;">게시판이용 공지사항 사이트 이용시 공지글을 꼭 필독해 주세요.</a>
+                                <span>02/01</span>
+                            </dt>
+                            <dt class="list-item">
+                                <span class="noti"><strong>알림</strong></span>
+                                <a href="#;">자유게시판 이용시 필독사항 거래게시글 작성전 필독해주세요.</a>
+                                <span>04/17</span>
+                            </dt>
+                            <dt class="list-item">
+                                <a href="#;">10월 휴면계정회원 현황</a>
+                                <span>10/05</span>
+                            </dt>
+                            <dt class="list-item">
+                                <a href="#;">9월 휴면계정회원 현황</a>
+                                <span>09/05</span>
+                            </dt>
+                        </dl>
+                    </div>
+                </div>
+            
+                <div class="data-list">
+                    <div class="list-title">
+                        <h3>자유게시판</h3>
+                        <a href="#;" title="자유게시판 더보기">더보기</a>
+                    </div>
+                    <div class="list-body">
+                        <dl>
+                            <dt class="list-item">
+                                <span>스터디</span>
+                                <a href="#;">봉천동 스터디맴버 구해요.</a>
+                                <span>10/05</span>
+                            </dt>
+                            <dt class="list-item">
+                                <span>일반</span>
+                                <a href="#;">안녕하세요 가입인사드려요~</a>
+                                <span>10/05</span>
+                            </dt>
+                            <dt class="list-item">
+                                <span>스터디</span>
+                                <a href="#;">온라인 스터디 모집[3/6] 3자리 남았습니다</a>
+                                <span>10/05</span>
+                            </dt>
+                            <dt class="list-item">
+                                <span>일반</span>
+                                <a href="#;">정말급해요 도와주실분~ ㅠㅠ</a>
+                                <span>10/05</span>
+                            </dt>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallery">
+            <div class="data-list">
+                <div class="list-title">
+                    <h3>갤러리</h3>
+                    <a href="#;" title="갤러리 더보기">더보기</a>
+                </div>
+                <div class="list-body-grid">
+
+                    <div class="list-item">
+                        <a href="#;" title="갤러리 이동">갤러리 이동</a>
+                        <div class="con">
+                            <div class="con-img">
+                                <img src="http://via.placeholder.com/180x180"/>
+                            </div>
+                            <dl class="con-desc">
+                                <dt class="title"><span class="f09">일반</span><h4 class="ellips">갤러리보드제목1 갤러리보드제목1</h4></dt>
+                                <dt class="etc f09">
+                                    <p>
+                                        <span>작성자</span>
+                                    </p>
+                                    <p>10/9</p>
+                                </dt>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <a href="#;" title="갤러리 이동">갤러리 이동</a>
+                        <div class="con">
+                            <div class="con-img">
+                                <img src="http://via.placeholder.com/180x180"/>
+                            </div>
+                            <dl class="con-desc">
+                                <dt class="title"><span class="f09">일반</span><h4 class="ellips">갤러리보드제목2 갤러리보드제목2</h4></dt>
+                                <dt class="etc f09">
+                                    <p>
+                                        <span>작성자</span>
+                                    </p>
+                                    <p>10/9</p>
+                                </dt>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <a href="#;" title="갤러리 이동">갤러리 이동</a>
+                        <div class="con">
+                            <div class="con-img">
+                                <img src="http://via.placeholder.com/180x180"/>
+                            </div>
+                            <dl class="con-desc">
+                                <dt class="title"><span class="f09">일반</span><h4 class="ellips">갤러리보드제목3 갤러리보드제목3</h4></dt>
+                                <dt class="etc f09">
+                                    <p>
+                                        <span>작성자</span>
+                                    </p>
+                                    <p>10/9</p>
+                                </dt>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <a href="#;" title="갤러리 이동">갤러리 이동</a>
+                        <div class="con">
+                            <div class="con-img">
+                                <img src="http://via.placeholder.com/180x180"/>
+                            </div>
+                            <dl class="con-desc">
+                                <dt class="title"><span class="f09">일반</span><h4 class="ellips">갤러리보드제목4 갤러리보드제목4</h4></dt>
+                                <dt class="etc f09">
+                                    <p>
+                                        <span>작성자</span>
+                                    </p>
+                                    <p>10/9</p>
+                                </dt>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <a href="#;" title="갤러리 이동">갤러리 이동</a>
+                        <div class="con">
+                            <div class="con-img">
+                                <img src="http://via.placeholder.com/180x180"/>
+                            </div>
+                            <dl class="con-desc">
+                                <dt class="title"><span class="f09">일반</span><h4 class="ellips">갤러리보드제목5 갤러리보드제목5</h4></dt>
+                                <dt class="etc f09">
+                                    <p>
+                                        <span>작성자</span>
+                                    </p>
+                                    <p>10/9</p>
+                                </dt>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <a href="#;" title="갤러리 이동">갤러리 이동</a>
+                        <div class="con">
+                            <div class="con-img">
+                                <img src="http://via.placeholder.com/180x180"/>
+                            </div>
+                            <dl class="con-desc">
+                                <dt class="title"><span class="f09">일반</span><h4 class="ellips">갤러리보드제목6 갤러리보드제목6 </h4></dt>
+                                <dt class="etc f09">
+                                    <p>
+                                        <span>작성자</span>
+                                    </p>
+                                    <p>10/9</p>
+                                </dt>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <p class="copy">
+            Copyright © 2021 
+        </p>
+    </footer>
+
+    <article id="popup_login" class="dim-layer">
+        <div href="#popup_login" class="dimBg popup_close"></div>
+        <div class="pop-layer">
+            <div class="pop-container">
+                <div class="con-header">
+                    <h2>로그인</h2>
+                    <button href="#popup_login" class="popup_close">닫기</button>
+                </div>
+                <div class="con-main">
+                    <form class="loginForm">
+                        <p>
+                            <label>ID</label>
+                            <input type="text" placeholder="아이디 입력">
+                        </p>
+                        <p>
+                            <label>PW</label>
+                            <input type="password" placeholder="패스워드 입력">
+                        </p>
+                        <button class="btn btn-dk">로그인</button>
+                    </form>
+                    <p class="link-wrap">
+                        <a class="btn">아디디/비밀번호 찾기</a>
+                        <a class="btn">회원가입</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </article>
+</body>
+</html>

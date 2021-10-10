@@ -1,0 +1,283 @@
+/*  #############################################
+    -- 헤더, 풋터 CSS 적용
+    ############################################*/
+
+/* --------------- 헤더 ----------------*/
+#header{
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: block;
+    width: 100%;
+    background-color: var(--main-bg-color);
+}
+
+#header .top-area{
+    display: flex;  
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+    background-color: #607d8b;
+    padding: .8rem;
+
+    color: var(--main-font-wh);
+    box-shadow: 2px 2px 6px 0px rgb(0 0 0 / 10%);
+}
+
+#header .top-area .title-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#header .top-area .title-wrap h1{
+    margin-right: .5rem;
+}
+#header .top-area .title-wrap .menu.btn{
+    display: block;
+    position: relative;
+    font-size: 0;
+    border: 0;
+
+    box-shadow: 2px 2px 0px 0px rgb(92 109 116 / 62%), inset 2px 2px 13px 0px rgb(92 109 116 / 62%);
+    border-radius: 3px;
+    padding: 5px;
+    background-color: transparent;  
+}
+
+#header .top-area .title-wrap .menu.btn::after{
+    content: '';
+    display: block;
+    width: 1.8rem;
+    height: 1.8rem;
+    background-image: url(../img/menu3.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#header .top-area .link-wrap{
+    display: flex;
+}
+
+.middle-area{
+    display: none;
+    color: var(--main-font-wh);
+    box-shadow: 2px 2px 6px 0px rgb(0 0 0 / 10%);
+}
+
+.middle-area.is-open {
+    display: block;
+}
+
+#header .middle-area .nav ul{
+    list-style: none;
+
+    display: block;
+    position: relative;
+
+    margin: 0;
+    padding: .8rem 0;
+}
+
+#header .middle-area .nav ul li{
+    position: relative;
+    height: 100%;
+    padding: .8rem;
+
+}
+
+#header .middle-area .nav ul li span{
+    min-width: 80px;
+}
+
+#header .middle-area .nav ul li a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+#header .middle-area .search{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: .8rem;
+}
+
+#header .middle-area .search div{
+    flex: 1 auto;
+    border: 1px solid #ddd;
+}
+
+#header .middle-area .search input[type="search"]{
+    display: block;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+/* hover style */
+#header .middle-area .nav ul li:hover, .search:hover{
+    background-color: var(--sub-bg-color);
+}
+
+/* --------------- 풋터 ----------------*/
+#footer{
+    width: 100%;
+
+}
+#footer .copy{
+    color: var(--footer-font-rgrey);
+    padding: 3rem 0;
+    text-align: center;
+    font-size: .8rem;
+}
+
+/*  ########################################################
+    
+    *레이어 팝업
+    
+    ########################################################*/
+    .dim-layer{
+        display: none;
+
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+    }
+    .dim-layer.is-open{
+        display: block;
+    }
+    .dim-layer .dimBg{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0 0 0 / 75%);
+    }
+    .dim-layer .pop-layer{
+        position: relative; 
+
+        width: 320px;
+        height: 52%;
+
+        top: 40%; 
+        left: 50%;
+        z-index: 30;
+
+        transform: translate(-50%, -55%);
+        -webkit-transform: translate(-50%, -55%);
+        -moz-transform: translate(-50%, -55%);
+        -ms-transform: translate(-50%, -55%);
+        -o-transform: translate(-50%, -55%);
+        
+        background-color: #fff;
+        border-radius: 2px;
+        box-shadow: 2px 2px 20px 0px rgb(0 0 0 / 25%), inset 2px 2px 6px 0px rgb(0 0 0 / 10%);
+    }
+    
+    .pop-container{
+        position: absolute;
+
+        /* padding: 1rem; */
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        align-content: stretch;
+    }
+
+    .pop-container .con-header{
+    
+        width: 100%;
+        height: 4rem;
+        padding: 1rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: var(--main-bg-color);
+        color: var(--main-font-wh);
+    }
+
+    .pop-container .con-main{
+        height: 100%;
+        bottom: 0;
+        border: 1px solid var(--desc-line-color);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .pop-container .con-main .loginForm{
+        width: 100%;
+        padding: 1.4rem 2.5rem 1.5rem;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        
+        border-bottom: 1px solid var(--desc-line-color);
+    }
+    .pop-container .con-main .loginForm p{
+        margin-bottom: .8rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .pop-container .con-main .loginForm button{
+        margin-top: .8rem;
+        padding: .8rem 0;
+    }
+    .pop-container .con-main .loginForm label{
+        min-width: 40px;
+
+        font-weight: bold;
+        color: #333;
+    }
+    .pop-container .con-main .loginForm input{
+        padding: .5rem;
+        border: 1px solid var(--desc-line-color);
+        border-radius: 3px;
+
+        flex: 1 1 auto;
+    }
+
+    .pop-container .con-main .link-wrap{
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1.5rem 2.5rem ;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pop-container .con-main .link-wrap a.btn{
+        display: block;
+        width: 100%;
+
+        margin-bottom: .4rem;
+        padding: .8rem 0;
+
+        text-align: center;
+        border: 1px solid var(--desc-line-color);
+
+        font-size: 13.5px;
+        text-decoration: none;
+    }
